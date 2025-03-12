@@ -1,0 +1,7 @@
+sl29.dog package
+================
+
+.. automodule:: sl29.dog.dog
+   :members:
+   :undoc-members:
+   :show-inheritance:

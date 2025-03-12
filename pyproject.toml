@@ -9,7 +9,7 @@ description = "Un projet pour enseigner la POO en Python avec une classe Dog"
 authors = [
     { name = "Yves Cadour", email = "yves.cadour@saint-louis29.net" },
 ]
-readme = "README.md"
+readme = "README.rst"
 requires-python = ">=3.6"
 license = { file = "LICENSE" }
 classifiers = [
@@ -17,7 +17,13 @@ classifiers = [
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
 ]
-dependencies = []
+dependencies = [
+    "setuptools",
+    "pytest",
+    "pytest-cov",
+    "toml",
+    "m2r2",
+]
 
 [project.urls]
 Homepage = "https://github.com/saintlouis29/sl29.dog"
@@ -25,3 +31,16 @@ Homepage = "https://github.com/saintlouis29/sl29.dog"
 [tool.setuptools]
 packages = ["sl29.dog"]
 package-dir = { "" = "src" }
+
+# Configuration pour Sphinx
+[tool.sphinx]
+source-dir = "doc"
+build-dir = "doc/_build"
+
+# Dépendances de développement (Sphinx et extensions)
+[project.optional-dependencies]
+dev = [
+    "sphinx>=7.0.0",  # Sphinx pour la documentation
+    "sphinx-rtd-theme>=1.0.0",  # Thème ReadTheDocs pour Sphinx
+    "sphinx-autodoc-typehints>=1.0.0",  # Support des annotations de type
+]
