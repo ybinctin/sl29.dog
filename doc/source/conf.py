@@ -42,6 +42,7 @@ extensions = [
     "sphinx.ext.viewcode",  # Ajoute des liens vers le code source
     "sphinx_rtd_theme",  # Active le thème ReadTheDocs
     "sphinx_autodoc_typehints",  # Support des annotations de type
+    'sphinx.ext.napoleon',      # Pour prendre en charge les docstrings au format Google ou NumPy
 ]
 
 templates_path = ["_templates"]
@@ -53,3 +54,17 @@ language = "fr"
 
 html_theme = "sphinx_rtd_theme"  # Utilise le thème ReadTheDocs
 html_static_path = ["_static"]
+
+# -- Options pour les extensions ---------------------------------------------
+
+# Configuration de l'extension autodoc
+autodoc_default_options = {
+    'members': True,
+    'undoc-members': True,
+    'show-inheritance': True,
+}
+
+# Configuration de l'extension napoleon
+napoleon_include_init_with_doc = True
+napoleon_include_private_with_doc = False
+napoleon_include_special_with_doc = False
