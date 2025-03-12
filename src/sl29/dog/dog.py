@@ -1,34 +1,28 @@
+"""Module providing an implementation of a dog"""
+
+
 class Dog:
     """
     Une classe représentant un chien.
 
-    :param name: Le nom du chien.
-    :param race: La race du chien.
+    Attributes:
+        race (str): La race du chien.
+        sex (str): Le sexe du chien ('M' ou 'F').
+        name (str): Le nom du chien.
     """
 
-    def __init__(self, race: str, name: str = "") -> None:
+    def __init__(self, race: str, sex: str, name: str = "") -> None:
         """
-        Initialise un chien avec une race et un nom.
+        Initialise un chien avec une race, un sexe et un nom.
 
-        :param race: La race du chien.
-        :param name: Le nom du chien (optionnel, par défaut une chaîne vide).
+        Args:
+            race (str): La race du chien.
+            sex (str): Le sexe du chien ('M' ou 'F').
+            name (str, optional): Le nom du chien. Par défaut, une chaîne vide.
         """
-        self._name: str = name
-        self._race: str = race
+        self.race = race
+        self.sex = sex
+        self.name = name
 
-    def get_name(self) -> str:
-        """
-        Retourne le nom du chien.
-
-        :return: Le nom du chien.
-        """
-        return self._name
-
-    def get_race(self) -> str:
-        """
-        Retourne la race du chien.
-
-        :return: La race du chien.
-        """
-        return self._race
-
+if __name__ == "__main__":
+    pass
