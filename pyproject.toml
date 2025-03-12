@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sl29.dog"
+version = "0.1"
+description = "Un projet pour enseigner la POO en Python avec une classe Dog"
+authors = [
+    { name = "Yves Cadour", email = "yves.cadour@saint-louis29.net" },
+]
+readme = "README.md"
+requires-python = ">=3.6"
+license = { file = "LICENSE" }
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/saintlouis29/sl29.dog"
+
+[tool.setuptools]
+packages = ["sl29.dog"]
+package-dir = { "" = "src" }
