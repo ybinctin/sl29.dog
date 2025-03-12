@@ -19,8 +19,6 @@ classifiers = [
 ]
 dependencies = [
     "setuptools",
-    "pytest",
-    "pytest-cov",
     "toml",
     "m2r2",
 ]
@@ -37,10 +35,23 @@ package-dir = { "" = "src" }
 source-dir = "doc"
 build-dir = "doc/_build"
 
-# Dépendances de développement (Sphinx et extensions)
 [project.optional-dependencies]
-dev = [
+# Dépendances de documentation(Sphinx et extensions)
+doc = [
     "sphinx>=7.0.0",  # Sphinx pour la documentation
     "sphinx-rtd-theme>=1.0.0",  # Thème ReadTheDocs pour Sphinx
     "sphinx-autodoc-typehints>=1.0.0",  # Support des annotations de type
+]
+
+# Dépendances de développement
+dev = [
+    "ipykernel",
+    # Ajoutez ici d'autres dépendances de développement
+]
+
+# Dépendances de tests
+test = [
+    "pytest",
+    "pytest-cov",
+    # Ajoutez ici d'autres dépendances de tests
 ]
