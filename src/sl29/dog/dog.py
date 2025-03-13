@@ -1,4 +1,11 @@
 """Module providing an implementation of a dog"""
+from typing import Optional
+import random
+
+# Définition de l'exception personnalisée MatingError
+class MatingError(Exception):
+    """Exception levée lorsque deux chiens de même sexe tentent de s'accoupler."""
+    pass
 
 
 class Dog:
