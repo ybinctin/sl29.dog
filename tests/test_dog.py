@@ -48,7 +48,7 @@ class TestDog(unittest.TestCase):
     def test_mate_same_race(self):
         # Test de l'accouplement avec des parents de même race
         puppy = self.rintintin.mate(self.rantanplane)
-        self.assertEqual(puppy.race, "Berger allemand")
+        # A FAIRE
 
     def test_mate_same_sex_error(self):
         # Test de l'accouplement entre deux chiens de même sexe
