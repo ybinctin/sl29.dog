@@ -114,11 +114,12 @@ Pour lancer les tests :
 
    pytest --cov=sl29.dog tests/
 
-ou
+ou pour avoir un rapport détaillé au format html
 
 .. code-block:: bash
 
    pytest --cov=sl29.dog --cov-report=html tests/
+
 
 
 
