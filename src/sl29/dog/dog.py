@@ -52,9 +52,19 @@ class Dog:
         return self._sex
         raise NotImplementedError
 
+    def bark(self, entier=1) -> str:
+        chaine = ""
+        for i in range(entier):
+            chaine += "Woff"
+        return chaine
+        
+
     def __str__(self) -> str:
         """
         Méthode d'affichage de la classe
+
+        Returns:
+            str: Les informations du chien.
         """
         return f"Chien: {self.name}, Race: {self._race}, Sexe: {self._sex}"
 
