@@ -111,13 +111,13 @@ class Dog:
             
             sexe = random.choice(["M", "F"])
             
-            chiot = Dog(race, sexe, "Chiot")
+            chiot = Dog(race, sexe, "Matthieu")
 
             chiot._father = father.name
             chiot._mother = mother.name
 
-            mother.puppies.append(chiot.name)
-            father.puppies.append(chiot.name)
+            mother.puppies.append(chiot.__str__())
+            father.puppies.append(chiot.__str__())
         return chiot
 
     def bark(self, entier=1) -> str:
@@ -135,6 +135,3 @@ class Dog:
             str: Les informations du chien.
         """
         return f"Chien: {self.name}, Race: {self._race}, Sexe: {self._sex}"
-
-if __name__ == "__main__":
-    pass
