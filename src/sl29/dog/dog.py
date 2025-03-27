@@ -30,6 +30,9 @@ class Dog:
         self._race = race  # Attribut protégé pour la race
         self._sex = sex    # Attribut protégé pour le sexe
         self.name = name   # Attribut public pour le nom
+        self._mother = None
+        self._father = None
+        self._puppies = []
 
     @property
     def race(self) -> str:
@@ -51,6 +54,71 @@ class Dog:
         """
         return self._sex
         raise NotImplementedError
+
+    @property
+    def mother(self) -> Optional['Dog']:
+        """
+        Retourne la mère du chien ou None.
+
+        Returns:
+            Optional[Dog]: La mère du chien ou None.
+        """
+        return self._mother
+    
+    @property
+    def father(self) -> Optional['Dog']:
+        """
+        Retourne le père du chien ou None.
+
+        Returns:
+            Optional[Dog]: Le père du chien ou None.
+        """
+        return self._father
+    
+    @property
+    def puppies(self):
+        """
+        Retourne les enfants du chien ou une liste vide.
+
+        Returns:
+            type list
+        """
+        return self._puppies
+
+    def mate(self, other: 'Dog') -> 'Dog':
+        """
+        Fait s'accoupler deux chiens et retourne un chiot.
+
+        Args:
+            other (Dog): L'autre chien avec lequel s'accoupler.
+
+        Returns:
+            Dog: Le chiot issu de l'accouplement.
+
+        Raises:
+            MatingError: Si les deux chiens sont de même sexe.
+        """
+        if self._sex == other._sex :
+            raise MatingError("Les deux chiens sont du même sexe, accouplement impossible.")
+        else:  
+            father = self if self.sex == "M" else other
+            mother = self if self.sex == "F" else other
+
+            if father.race == mother.race:
+                race = father.race
+            else:
+                race = "bâtard"
+            
+            sexe = random.choice(["M", "F"])
+            
+            chiot = Dog(race, sexe, "Chiot")
+
+            chiot._father = father.name
+            chiot._mother = mother.name
+
+            mother.puppies.append(chiot.name)
+            father.puppies.append(chiot.name)
+        return chiot
 
     def bark(self, entier=1) -> str:
         return "Woff"*entier
