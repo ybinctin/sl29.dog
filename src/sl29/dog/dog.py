@@ -53,11 +53,11 @@ class Dog:
         raise NotImplementedError
 
     def bark(self, entier=1) -> str:
-        chaine = ""
-        for i in range(entier):
-            chaine += "Woff"
-        return chaine
-        
+        return "Woff"*entier
+
+    def chew(self, stuff):
+        nv_stuff = stuff[:-1]
+        return nv_stuff    
 
     def __str__(self) -> str:
         """
